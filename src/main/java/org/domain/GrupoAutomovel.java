@@ -2,7 +2,6 @@ package org.domain;
 
 public class GrupoAutomovel {
     private String classe;
-
     private int numeroPortas;
 
 
@@ -16,7 +15,7 @@ public class GrupoAutomovel {
 
 
     public boolean alterarNumeroPortas(int numeroPortas) {
-        if(numeroPortas> 0) {
+        if(numeroPortas > 0) {
             this.numeroPortas = numeroPortas;
             return true;
         }
