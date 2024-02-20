@@ -14,7 +14,7 @@ public class GrupoAutomovel {
 
     }
     public boolean alterarClasse(String novaClasse){
-        if(novaClasse.equals("") || novaClasse == null){
+        if(novaClasse == null || novaClasse.equals("")){
             return false;
         }
         classe = novaClasse;
