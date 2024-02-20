@@ -9,7 +9,9 @@ class AutomovelTest {
         @org.junit.jupiter.api.Test
         void testGetMatricula() {
             Automovel automovel = new Automovel();
-            assertNull(automovel.getMatricula());
+            assertTrue(    automovel.setMatricula("00-00-00"));
+            assertEquals("00-00-00", automovel.getMatricula());
+
         }
 
 }
