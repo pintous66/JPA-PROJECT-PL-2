@@ -15,4 +15,34 @@ class GrupoAutomovelTest {
             assertFalse( grupo.alterarNumeroPortas(-1));
         }
 
+    @org.junit.jupiter.api.Test
+    void testAlterarClasseValido() {
+            //arrange
+        GrupoAutomovel grupo = new GrupoAutomovel();
+        //act
+        boolean result = grupo.alterarClasse("Classe A");
+        //assert
+        assertTrue(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void testAlterarClasseInvalidoVazio() {
+        //arrange
+        GrupoAutomovel grupo = new GrupoAutomovel();
+        //act
+        boolean result = grupo.alterarClasse("");
+        //assert
+        assertFalse(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void testAlterarClasseInvalidoNull() {
+        //arrange
+        GrupoAutomovel grupo = new GrupoAutomovel();
+        //act
+        boolean result = grupo.alterarClasse(null);
+        //assert
+        assertFalse(result);
+    }
+
 }
