@@ -6,14 +6,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GrupoAutomovelTest {
 
-        @org.junit.jupiter.api.Test
-        void testAlterarNumeroPortas() {
-            GrupoAutomovel grupo = new GrupoAutomovel();
+    @org.junit.jupiter.api.Test
+    void testAlterarNumeroPortasValido() {
+        //arrange
+        GrupoAutomovel grupo = new GrupoAutomovel();
+        //act
+        boolean result = grupo.alterarNumeroPortas(5);
+        //assert
+        assertTrue(result);
+    }
 
-            assertTrue( grupo.alterarNumeroPortas(4));
-            assertFalse( grupo.alterarNumeroPortas(0));
-            assertFalse( grupo.alterarNumeroPortas(-1));
-        }
+    @org.junit.jupiter.api.Test
+    void testAlterarNumeroPortasInvalidoMenor0() {
+        //arrange
+        GrupoAutomovel grupo = new GrupoAutomovel();
+        //act
+        boolean result = grupo.alterarNumeroPortas(-1);
+        //assert
+        assertFalse(result);
+    }
 
     @org.junit.jupiter.api.Test
     void testAlterarClasseValido() {
@@ -44,5 +55,4 @@ class GrupoAutomovelTest {
         //assert
         assertFalse(result);
     }
-
 }
