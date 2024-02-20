@@ -1,5 +1,7 @@
 package org.domain;
 
+import java.util.Objects;
+
 public class Automovel {
     public int kms;
 
@@ -8,7 +10,7 @@ public class Automovel {
     private final String matricula;
 
     public Automovel(String matricula){
-        if(matricula.length() == 0){
+        if(  matricula == null ||  matricula.length() == 0 ){
             throw new IllegalArgumentException("Matricula inválida");
         }
         this.matricula = matricula;
@@ -19,7 +21,14 @@ public class Automovel {
     public String getMatricula() {
         return matricula;
     }
-    public void alterarKms(int kmNovo){
-        kms = kmNovo;
+    public boolean alterarKms(int kmNovo){
+        if(kmNovo > kms){
+            kms = kmNovo;
+            return true;
+
+        }
+
+        return false;
+
     }
 }
