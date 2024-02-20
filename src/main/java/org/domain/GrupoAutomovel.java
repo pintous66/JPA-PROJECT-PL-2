@@ -4,7 +4,12 @@ public class GrupoAutomovel {
 
     private int numeroPortas;
 
-    public void alterarNumeroPortas(int numeroPortas) {
-        this.numeroPortas = numeroPortas;
+    public boolean alterarNumeroPortas(int numeroPortas) {
+        if(numeroPortas> 0) {
+            this.numeroPortas = numeroPortas;
+            return true;
+        }
+        return false;
+
     }
 }

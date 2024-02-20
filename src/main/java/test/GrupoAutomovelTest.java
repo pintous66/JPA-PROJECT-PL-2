@@ -1,22 +1,18 @@
 package test;
 
+import org.domain.GrupoAutomovel;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GrupoAutomovelTest {
 
         @org.junit.jupiter.api.Test
-        void testCreateGrupoAutomovel() {
-            fail("Not yet implemented");
-        }
+        void testAlterarNumeroPortas() {
+            GrupoAutomovel grupo = new GrupoAutomovel();
 
-        @org.junit.jupiter.api.Test
-        void testEquals() {
-            fail("Not yet implemented");
-        }
-
-        @org.junit.jupiter.api.Test
-        void testHashCode() {
-            fail("Not yet implemented");
+            assertTrue( grupo.alterarNumeroPortas(4));
+            assertFalse( grupo.alterarNumeroPortas(0));
+            assertFalse( grupo.alterarNumeroPortas(-1));
         }
 
 }
