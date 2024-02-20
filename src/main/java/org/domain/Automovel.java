@@ -1,7 +1,7 @@
 package org.domain;
 
 public class Automovel {
-    public int kms;
+    public int kms = 0;
 
     private int KMS_BY_OMISSION = 0;
 
@@ -19,7 +19,12 @@ public class Automovel {
     public String getMatricula() {
         return matricula;
     }
-    public void alterarKms(int kmNovo){
-        kms = kmNovo;
+    public boolean alterarKms(int kmNovo){
+        if(kmNovo < kms){
+            return false;
+        }else{
+            kms = kmNovo;
+            return true;
+        }
     }
 }

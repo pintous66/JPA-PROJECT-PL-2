@@ -13,8 +13,12 @@ public class GrupoAutomovel {
         return false;
 
     }
-    public void alterarClasse(String novaClasse){
+    public boolean alterarClasse(String novaClasse){
+        if(novaClasse.equals("") || novaClasse == null){
+            return false;
+        }
         classe = novaClasse;
+        return true;
     }
 
     @Override
