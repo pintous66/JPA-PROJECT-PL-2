@@ -6,6 +6,13 @@ public class GrupoAutomovel {
     private int numeroPortas;
 
 
+    public GrupoAutomovel(String classe) {
+        if(  classe == null ||  classe.length() == 0 ){
+            throw new IllegalArgumentException("Classe inválida");
+        }
+        this.classe = classe;
+        numeroPortas = 0;
+    }
 
 
     public boolean alterarNumeroPortas(int numeroPortas) {
@@ -26,8 +33,7 @@ public class GrupoAutomovel {
 
     @Override
     public String toString() {
-        return "GrupoAutomovel{" +
-                "classe='" + classe + '\'' +
-                '}';
+        String s = "Classe = " + classe + " Numero de Portas = " + numeroPortas;
+        return s;
     }
 }
