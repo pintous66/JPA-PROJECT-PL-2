@@ -5,6 +5,7 @@ public class GrupoAutomovel {
     private int numeroPortas;
 
 
+    // Nota: duvidas na interpretação do enunciado, não entendemos na totalidade o modelo de negócia do Grupo Automóvel
     public GrupoAutomovel(String classe) {
         if(  classe == null ||  classe.length() == 0 ){
             throw new IllegalArgumentException("Classe inválida");
