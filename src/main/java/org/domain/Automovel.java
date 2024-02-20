@@ -27,8 +27,13 @@ public class Automovel {
             return true;
 
         }
-
         return false;
 
+    }
+
+    @Override
+    public String toString() {
+        String s = "Matricula = " + matricula + " Kms = " + kms;
+        return s;
     }
 }
