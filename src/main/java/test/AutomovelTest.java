@@ -67,4 +67,14 @@ class AutomovelTest {
                 assertEquals(0, auto.kms);
         }
 
+        @Test
+        public void ToString(){
+                //arrange
+                Automovel auto = new Automovel("11-11-11");
+                //act
+                String result = auto.toString();
+                //assert
+                assertEquals("Matricula = 11-11-11 Kms = 0", result);
+        }
+
 }
