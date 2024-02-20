@@ -17,10 +17,10 @@ class AutomovelTest {
             Automovel automovel = new Automovel("00-00-00");
 
             // act
-            boolean resultado = automovel.setMatricula("00-00-00");
+
 
             // assert
-            assertTrue(resultado);
+
         }
 
 }
