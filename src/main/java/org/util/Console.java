@@ -21,6 +21,7 @@ import java.util.logging.Logger;
  */
 public class Console {
 
+
     public static String readLine(String prompt) {
         try {
             System.out.println(prompt);

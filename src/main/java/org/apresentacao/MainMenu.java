@@ -5,6 +5,7 @@
  */
 package org.apresentacao;
 
+import org.ui.GrupoAutomovelUI;
 import org.util.Console;
 
 /**
@@ -12,6 +13,10 @@ import org.util.Console;
  * @author mcn
  */
 public class MainMenu {
+	public static void main(String[] args) {
+		System.out.println("Bem-vindo ao Rent a Car");
+		mainLoop();
+	}
     public static void mainLoop() {
 		int opcao = 0;
 		do {
@@ -22,7 +27,8 @@ public class MainMenu {
 					System.out.println("fim ...");
 					break;
 				case 1:
-					System.out.println("Ainda não implementado ...");
+					GrupoAutomovelUI ui = new GrupoAutomovelUI();
+					ui.registarGA();
 					break;
 
 				case 2:
