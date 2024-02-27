@@ -2,9 +2,8 @@ package org.domain;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class GrupoAutomovel {
@@ -14,7 +13,7 @@ public class GrupoAutomovel {
      */
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String classe;
     /*
@@ -37,12 +36,12 @@ public class GrupoAutomovel {
         numeroPortas = 0;
     }
 
-    protected GrupoAutomovel() {
+    public GrupoAutomovel() {
 
     }
 
     public GrupoAutomovel(String nome, int portas, String classe) {
-         this.nome = nome;
+            this.nome = nome;
             this.numeroPortas = portas;
             this.classe = classe;
     }

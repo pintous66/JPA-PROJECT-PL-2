@@ -1,9 +1,9 @@
 package org.domain;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 import java.util.Objects;
 
-@Entity
+
 public class Automovel {
     /*
     * kms do automovel
