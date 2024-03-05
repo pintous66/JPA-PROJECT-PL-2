@@ -43,7 +43,7 @@ public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositor
         em.persist(grupoAutomovel);
         tx.commit();
         em.close();
-
+        System.out.println("ID = " + grupoAutomovel.getId());
         return grupoAutomovel;
     }
 

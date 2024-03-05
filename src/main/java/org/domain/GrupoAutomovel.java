@@ -13,7 +13,7 @@ public class GrupoAutomovel {
      */
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String classe;
     /*
@@ -75,5 +75,9 @@ public class GrupoAutomovel {
     public String toString() {
         String s = "Classe = " + classe + " Numero de Portas = " + numeroPortas;
         return s;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
