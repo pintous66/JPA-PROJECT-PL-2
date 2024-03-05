@@ -14,9 +14,11 @@ public class GrupoAutomovelMapper {
         return grupoAutomovelList.stream().map(GrupoAutomovelMapper::toGrupoAutomovelDTO).collect(Collectors.toList());
     }
 
-    private static GrupoAutomovelDTO toGrupoAutomovelDTO(GrupoAutomovel grupoAutomovel) {
-        return new GrupoAutomovelDTO(grupoAutomovel.getId(), grupoAutomovel.getClasse(), grupoAutomovel.getNumeroPortas(), grupoAutomovel.getNome());
+    public static GrupoAutomovelDTO toGrupoAutomovelDTO(GrupoAutomovel grupoAutomovel) {
+        return new GrupoAutomovelDTO(grupoAutomovel.Id(), grupoAutomovel.Classe(), grupoAutomovel.NumeroPortas(), grupoAutomovel.Nome());
     }
+
+
 
 
 }

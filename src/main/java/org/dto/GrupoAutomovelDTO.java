@@ -3,7 +3,7 @@ package org.dto;
 public record GrupoAutomovelDTO(Long id, String classe, int numeroPortas, String nome) {
 
     public String toString() {
-        String s = "ID = " + id + "\nClasse = " + classe + "\nNumero de Portas = " + numeroPortas;
+        String s = "ID = " + id + "\nClasse = " + classe + "\nNome" + nome + "\nNumero de Portas = " + numeroPortas;
         return s;
     }
 

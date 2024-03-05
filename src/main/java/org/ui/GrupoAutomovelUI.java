@@ -9,6 +9,7 @@ package org.ui;
 
 import org.controller.GrupoAutomovelController;
 import org.domain.GrupoAutomovel;
+import org.dto.GrupoAutomovelDTO;
 import org.util.Console;
 
 import java.util.List;
@@ -27,15 +28,15 @@ public class GrupoAutomovelUI {
         String nome = Console.readLine("Nome:");
         int portas = Console.readInteger("Número de portas");
         String classe = Console.readLine("Classe:");
-        GrupoAutomovel grupoAutomovel = controller.
+        GrupoAutomovelDTO grupoAutomovel = controller.
                 registarGrupoAutomóvel(nome, portas, classe);
         System.out.println("Grupo Automóvel" + grupoAutomovel);
     }
     public void listarGAs() {
         System.out.println("*** Lista de Grupos Automóveis ***\n");
-        List<GrupoAutomovel> gruposAutomoveis = controller.
+        List<GrupoAutomovelDTO> gruposAutomoveis = controller.
                 listarGruposAutomoveis();
-        for (GrupoAutomovel grupoAutomovel : gruposAutomoveis) {
+        for (GrupoAutomovelDTO grupoAutomovel : gruposAutomoveis) {
             System.out.println(grupoAutomovel);
         }
 
@@ -44,7 +45,7 @@ public class GrupoAutomovelUI {
 
 	public void procurarGAPorID() {
         long id = Console.readLong("ID do Grupo Automóvel:");
-        GrupoAutomovel grupoAutomovel = controller.procurarGrupoAutomovel(id);
+        GrupoAutomovelDTO grupoAutomovel = controller.procurarGrupoAutomovel(id);
         System.out.println("Grupo Automóvel: "+"\n" + ((grupoAutomovel == null)? "Não encontrado": grupoAutomovel));
 
 

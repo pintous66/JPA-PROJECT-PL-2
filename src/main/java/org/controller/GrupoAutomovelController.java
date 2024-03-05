@@ -10,7 +10,6 @@ package org.controller;
 import org.domain.GrupoAutomovel;
 import org.dto.GrupoAutomovelDTO;
 import org.mapper.GrupoAutomovelMapper;
-import org.repository.GrupoAutomovelRepositorio;
 import org.repository.GrupoAutomovelRepositorioJPAImpl;
 import org.repository.JpaRepository;
 
@@ -22,22 +21,24 @@ import java.util.List;
  */
 public class GrupoAutomovelController {
 
-    public GrupoAutomovel registarGrupoAutomóvel(String nome, int portas,
-                                                 String classe) {
+    private static final GrupoAutomovelMapper mapper = new GrupoAutomovelMapper();
+
+    public GrupoAutomovelDTO registarGrupoAutomóvel(String nome, int portas,
+                                                    String classe) {
         GrupoAutomovel grupo1 = new GrupoAutomovel(nome, portas, classe);
         JpaRepository repo =  new GrupoAutomovelRepositorioJPAImpl();
-        return (GrupoAutomovel) repo.add(grupo1);
+        return  mapper.toGrupoAutomovelDTO( (GrupoAutomovel) repo.add(grupo1));
     }
     
-    public List<GrupoAutomovel> listarGruposAutomoveis() {
+    public List<GrupoAutomovelDTO> listarGruposAutomoveis() {
 		JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
-        return repositorio.findAll();
+        return mapper.toGrupoAutomovelDTOList(repositorio.findAll());
 	}
 
-	public GrupoAutomovel procurarGrupoAutomovel(long id) {
+	public GrupoAutomovelDTO procurarGrupoAutomovel(long id) {
 
         JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
-        return (GrupoAutomovel) repositorio.findById(id);
+        return mapper.toGrupoAutomovelDTO((GrupoAutomovel) repositorio.findById(id));
 	}
 
     public List<GrupoAutomovelDTO> listaGruposAutomoveisDTO() {

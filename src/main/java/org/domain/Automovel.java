@@ -2,8 +2,6 @@ package org.domain;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 
 @Entity
 public class Automovel {
@@ -76,7 +74,23 @@ public class Automovel {
      */
     @Override
     public String toString() {
-        String s = "Matricula = " + matricula + " Kms = " + kms + "Grupo Automovel = " + GA.getNome() ;
+        String s = "Matricula = " + matricula + " Kms = " + kms + "Grupo Automovel = " + GA.Nome() ;
         return s;
+    }
+
+    public Long Id(){
+        return id;
+    }
+
+    public Long GrupoAutomovelID(){
+        return GA.Id();
+    }
+
+    public int Kms(){
+        return kms;
+    }
+
+    public String Matricula() {
+        return matricula;
     }
 }

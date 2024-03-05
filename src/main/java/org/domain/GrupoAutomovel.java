@@ -77,18 +77,18 @@ public class GrupoAutomovel {
         return s;
     }
 
-    public Long getId() {
+    public Long Id() {
         return id;
     }
 
-    public String getClasse() {
+    public String Classe() {
         return classe;
     }
 
-    public String getNome(){
+    public String Nome(){
         return  nome;
     }
-    public int getNumeroPortas(){
+    public int NumeroPortas(){
         return numeroPortas;
     }
 }

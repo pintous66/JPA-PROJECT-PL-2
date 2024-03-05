@@ -13,7 +13,7 @@ public class AutomovelUI {
     public void registarAutomovel() {
         System.out.println("*** Registo Automóvel ***\n");
         String matricula = Console.readLine("Matricula:");
-        // colocar um -separador entre os grupos automóveis
+
         grupoAutomovelController.listaGruposAutomoveisDTO().forEach(System.out::println);
         long idGA = Console.readLong("Escolha o id do grupo automóvel");
 
