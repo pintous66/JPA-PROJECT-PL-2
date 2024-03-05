@@ -27,7 +27,8 @@ public class GrupoAutomovelController {
     }
     
     public List<GrupoAutomovel> listarGruposAutomoveis() {
-		throw new UnsupportedOperationException("Ainda não implementada");
+		GrupoAutomovelRepositorio repositorio = new GrupoAutomovelRepositorioJPAImpl();
+        return repositorio.findAll();
 	}
 
 	public GrupoAutomovel procurarGrupoAutomovel(long id) {

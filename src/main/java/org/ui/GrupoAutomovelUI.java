@@ -32,7 +32,14 @@ public class GrupoAutomovelUI {
         System.out.println("Grupo Automóvel" + grupoAutomovel);
     }
     public void listarGAs() {
-		throw new UnsupportedOperationException("Ainda não implementada.");
+        System.out.println("*** Lista de Grupos Automóveis ***\n");
+        List<GrupoAutomovel> gruposAutomoveis = controller.
+                listarGruposAutomoveis();
+        for (GrupoAutomovel grupoAutomovel : gruposAutomoveis) {
+            System.out.println(grupoAutomovel);
+        }
+
+
 	}
 
 	public void procurarGAPorID(long id) {

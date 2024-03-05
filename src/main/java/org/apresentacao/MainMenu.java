@@ -19,6 +19,7 @@ public class MainMenu {
 	}
     public static void mainLoop() {
 		int opcao = 0;
+		GrupoAutomovelUI ui = new GrupoAutomovelUI();
 		do {
 			opcao = menu();
 
@@ -27,12 +28,12 @@ public class MainMenu {
 					System.out.println("fim ...");
 					break;
 				case 1:
-					GrupoAutomovelUI ui = new GrupoAutomovelUI();
+
 					ui.registarGA();
 					break;
 
 				case 2:
-					System.out.println("Ainda não implementado ...");
+					ui.listarGAs();
 					break;
 
 				
