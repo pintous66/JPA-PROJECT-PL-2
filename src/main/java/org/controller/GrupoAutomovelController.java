@@ -8,6 +8,8 @@ package org.controller;
 
 
 import org.domain.GrupoAutomovel;
+import org.dto.GrupoAutomovelDTO;
+import org.mapper.GrupoAutomovelMapper;
 import org.repository.GrupoAutomovelRepositorio;
 import org.repository.GrupoAutomovelRepositorioJPAImpl;
 import org.repository.JpaRepository;
@@ -37,6 +39,13 @@ public class GrupoAutomovelController {
         JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
         return (GrupoAutomovel) repositorio.findById(id);
 	}
+
+    public List<GrupoAutomovelDTO> listaGruposAutomoveisDTO() {
+        JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
+         GrupoAutomovelMapper mapper = new GrupoAutomovelMapper();
+        return mapper.toGrupoAutomovelDTOList(repositorio.findAll());
+
+    }
 
         /*  Versão  sem usar padrão repositório
 	 private GrupoAutomovel gravarGA(GrupoAutomovel gAuto) {

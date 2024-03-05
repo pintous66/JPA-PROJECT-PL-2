@@ -5,6 +5,7 @@
  */
 package org.apresentacao;
 
+import org.ui.AutomovelUI;
 import org.ui.GrupoAutomovelUI;
 import org.util.Console;
 
@@ -19,7 +20,8 @@ public class MainMenu {
 	}
     public static void mainLoop() {
 		int opcao = 0;
-		GrupoAutomovelUI ui = new GrupoAutomovelUI();
+		GrupoAutomovelUI GAui = new GrupoAutomovelUI();
+		AutomovelUI Aui = new AutomovelUI();
 		do {
 			opcao = menu();
 
@@ -29,14 +31,17 @@ public class MainMenu {
 					break;
 				case 1:
 
-					ui.registarGA();
+					GAui.registarGA();
 					break;
 
 				case 2:
-					ui.listarGAs();
+					GAui.listarGAs();
 					break;
 				case 3:
-					ui.procurarGAPorID();
+					GAui.procurarGAPorID();
+					break;
+				case 4:
+					Aui.registarAutomovel();
 					break;
 
 				
@@ -58,7 +63,7 @@ public class MainMenu {
 		System.out.println("1.Registar Grupo Automóvel");
 		System.out.println("2.Listar todos os Grupos Automóveis");
 		System.out.println("3.Procurar Grupo Automóvel por ID");
-		
+		System.out.println("4.Registar um Automovel");
         System.out.println("=============================");
         System.out.println("0. Sair\n\n");
 		option = Console.readInteger("Por favor escolha opção");

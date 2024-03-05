@@ -1,10 +1,15 @@
 package org.domain;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
 
+@Entity
 public class Automovel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
     /*
     * kms do automovel
     * não podem ser inferiores a zero, nem pode passar de um valor superior para um inferior
@@ -14,7 +19,8 @@ public class Automovel {
     /*
     * Por omissão um carro começa com 0 km
      */
-    private int KMS_BY_OMISSION = 0;
+    @Transient
+    private static final int KMS_BY_OMISSION = 0;
 
     /*
     * Matricula do automovel não pode ser nula nem vazia, o resto depende de países e de regras de cada país
@@ -25,12 +31,24 @@ public class Automovel {
     * Construtor de Automovel, valida a matricula se é nula ou vazia, lança uma excepção se for o caso
      */
 
-    public Automovel(String matricula){
+    @ManyToOne
+    private final GrupoAutomovel GA;
+
+    public Automovel(String matricula, GrupoAutomovel ga){
+        if(  ga == null ){
+            throw new IllegalArgumentException("Grupo Automovel invalido");
+        }
+        GA = ga;
         if(  matricula == null ||  matricula.length() == 0 ){
             throw new IllegalArgumentException("Matricula inválida");
         }
         this.matricula = matricula;
         this.kms = KMS_BY_OMISSION;
+    }
+
+    protected Automovel() {
+        this.matricula = null;
+        this.GA = null;
     }
 
 
@@ -58,7 +76,7 @@ public class Automovel {
      */
     @Override
     public String toString() {
-        String s = "Matricula = " + matricula + " Kms = " + kms;
+        String s = "Matricula = " + matricula + " Kms = " + kms + "Grupo Automovel = " + GA.getNome() ;
         return s;
     }
 }
