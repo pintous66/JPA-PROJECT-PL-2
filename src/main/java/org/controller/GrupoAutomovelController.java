@@ -10,6 +10,7 @@ package org.controller;
 import org.domain.GrupoAutomovel;
 import org.repository.GrupoAutomovelRepositorio;
 import org.repository.GrupoAutomovelRepositorioJPAImpl;
+import org.repository.JpaRepository;
 
 import java.util.List;
 
@@ -22,19 +23,19 @@ public class GrupoAutomovelController {
     public GrupoAutomovel registarGrupoAutomóvel(String nome, int portas,
                                                  String classe) {
         GrupoAutomovel grupo1 = new GrupoAutomovel(nome, portas, classe);
-        GrupoAutomovelRepositorio repo = new GrupoAutomovelRepositorioJPAImpl();
-        return repo.add(grupo1);
+        JpaRepository repo =  new GrupoAutomovelRepositorioJPAImpl();
+        return (GrupoAutomovel) repo.add(grupo1);
     }
     
     public List<GrupoAutomovel> listarGruposAutomoveis() {
-		GrupoAutomovelRepositorio repositorio = new GrupoAutomovelRepositorioJPAImpl();
+		JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
         return repositorio.findAll();
 	}
 
 	public GrupoAutomovel procurarGrupoAutomovel(long id) {
 
-        GrupoAutomovelRepositorio repositorio = new GrupoAutomovelRepositorioJPAImpl();
-        return repositorio.findById(id);
+        JpaRepository repositorio =  new GrupoAutomovelRepositorioJPAImpl();
+        return (GrupoAutomovel) repositorio.findById(id);
 	}
 
         /*  Versão  sem usar padrão repositório

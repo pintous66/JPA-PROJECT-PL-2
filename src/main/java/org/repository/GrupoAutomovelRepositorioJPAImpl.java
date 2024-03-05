@@ -17,8 +17,14 @@ import jakarta.persistence.Query;
  *
  * @author eapli
  */
-public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositorio {
+public class GrupoAutomovelRepositorioJPAImpl extends JpaRepository<GrupoAutomovel, Long> {
 
+
+    public GrupoAutomovelRepositorioJPAImpl() {
+        super();
+    }
+
+    /*
     private EntityManager getEntityManager() {
         EntityManagerFactory factory = Persistence.
                 createEntityManagerFactory("demo_orm_pu");
@@ -32,6 +38,8 @@ public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositor
      * @param grupoAutomovel
      * @return the persisted entity
      */
+
+    /*
     @Override
     public GrupoAutomovel add(GrupoAutomovel grupoAutomovel) {
         if (grupoAutomovel == null) {
@@ -47,13 +55,15 @@ public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositor
         return grupoAutomovel;
     }
 
-    
+
     /**
      * reads an entity GrupoAutomovel given its ID
      *
      * @param id
      * @return
      */
+
+    /*
     @Override
     public GrupoAutomovel findById(Long id) {
         return getEntityManager().find(GrupoAutomovel.class, id);
@@ -65,12 +75,19 @@ public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositor
      * @return
      */
     //@SuppressWarnings("unchecked")
+
+    /*
     @Override
     public List<GrupoAutomovel> findAll() {
         Query query = getEntityManager().createQuery(
                 "SELECT e FROM GrupoAutomovel e");
         List<GrupoAutomovel> list = query.getResultList();
         return list;
+    }
+    */
+    @Override
+    protected String persistenceUnitName() {
+        return "demo_orm_pu";
     }
 
 }
