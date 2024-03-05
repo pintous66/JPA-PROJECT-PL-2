@@ -14,10 +14,7 @@ import org.util.Console;
  * @author mcn
  */
 public class MainMenu {
-	public static void main(String[] args) {
-		System.out.println("Bem-vindo ao Rent a Car");
-		mainLoop();
-	}
+
     public static void mainLoop() {
 		int opcao = 0;
 		GrupoAutomovelUI GAui = new GrupoAutomovelUI();
