@@ -1,6 +1,8 @@
 package org.domain;
 
+import jakarta.persistence.Entity;
 import java.util.Objects;
+
 
 public class Automovel {
     /*
@@ -48,6 +50,7 @@ public class Automovel {
 
         }
         return false;
+
 
     }
 

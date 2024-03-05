@@ -1,11 +1,12 @@
 package test;
 
 import org.domain.Automovel;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class AutomovelTest {
+
+public class AutomovelTest {
 
         @Test
         public void testContrutorInvalidoVazio() {

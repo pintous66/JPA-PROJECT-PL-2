@@ -1,15 +1,27 @@
 package org.domain;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class GrupoAutomovel {
     /*
     * Classe do automovel, só sabemos que em principio não pode ser vazia nem nula
     *  Nota: duvidas na interpretação do enunciado, não entendemos na totalidade o modelo de negócia do Grupo Automóvel
      */
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
     private String classe;
     /*
     * Numero de portas do automovel, não pode ser inferior a zero
      */
     private int numeroPortas;
+
+    private String nome;
 
 
     /*
@@ -24,6 +36,15 @@ public class GrupoAutomovel {
         numeroPortas = 0;
     }
 
+    public GrupoAutomovel() {
+
+    }
+
+    public GrupoAutomovel(String nome, int portas, String classe) {
+            this.nome = nome;
+            this.numeroPortas = portas;
+            this.classe = classe;
+    }
 
     /*
     * Método que altera o número de portas do automovel, valida se o novo valor é superior a zero, se for altera o valore e retorna true, se não retorna falso
@@ -54,5 +75,9 @@ public class GrupoAutomovel {
     public String toString() {
         String s = "Classe = " + classe + " Numero de Portas = " + numeroPortas;
         return s;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

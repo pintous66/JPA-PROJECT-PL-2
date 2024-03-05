@@ -1,14 +1,16 @@
 package test;
 
 import org.domain.GrupoAutomovel;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class GrupoAutomovelTest {
+import static org.junit.Assert.*;
 
 
-    @org.junit.jupiter.api.Test
-    void testAlterarNumeroPortasValido() {
+public class GrupoAutomovelTest {
+
+
+    @Test
+    public void testAlterarNumeroPortasValido() {
         //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
@@ -16,8 +18,8 @@ class GrupoAutomovelTest {
         //assert
         assertTrue(result);
     }
-    @org.junit.jupiter.api.Test
-    void testAlterarNumeroPortasInvalidoMenor0() {
+    @Test
+    public void testAlterarNumeroPortasInvalidoMenor0() {
         //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
@@ -26,8 +28,8 @@ class GrupoAutomovelTest {
         assertFalse(result);
     }
 
-    @org.junit.jupiter.api.Test
-    void testAlterarClasseValido() {
+    @Test
+    public void testAlterarClasseValido() {
             //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
@@ -36,8 +38,8 @@ class GrupoAutomovelTest {
         assertTrue(result);
     }
 
-    @org.junit.jupiter.api.Test
-    void testAlterarClasseInvalidoVazio() {
+    @Test
+    public void testAlterarClasseInvalidoVazio() {
         //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
@@ -46,8 +48,8 @@ class GrupoAutomovelTest {
         assertFalse(result);
     }
 
-    @org.junit.jupiter.api.Test
-    void testAlterarClasseInvalidoNull() {
+    @Test
+    public void testAlterarClasseInvalidoNull() {
         //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
@@ -56,8 +58,8 @@ class GrupoAutomovelTest {
         assertFalse(result);
     }
 
-    @org.junit.jupiter.api.Test
-    void toStringTest() {
+    @Test
+    public void toStringTest() {
         //arrange
         GrupoAutomovel grupo = new GrupoAutomovel("Classe A");
         //act
