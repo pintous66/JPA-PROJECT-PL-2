@@ -9,7 +9,7 @@
 
     <class>org.domain.GrupoAutomovel</class>
     <class>org.domain.Automovel</class>
-
+    <class>org.domain.Cliente</class>
 
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>

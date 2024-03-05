@@ -5,6 +5,8 @@
  */
 package org.apresentacao;
 
+import org.domain.ClienteEmpresa;
+import org.repository.ClienteRepositorioImpl;
 import org.ui.AutomovelUI;
 import org.ui.GrupoAutomovelUI;
 import org.util.Console;
@@ -15,7 +17,12 @@ import org.util.Console;
  */
 public class MainMenu {
 
+
     public static void mainLoop() {
+
+		ClienteRepositorioImpl rep = new ClienteRepositorioImpl();
+		rep.add(new ClienteEmpresa("123456789", "Empresa 1", "123456789", "123456789"));
+
 		int opcao = 0;
 		GrupoAutomovelUI GAui = new GrupoAutomovelUI();
 		AutomovelUI Aui = new AutomovelUI();
