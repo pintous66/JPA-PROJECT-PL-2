@@ -73,7 +73,7 @@ public class GrupoAutomovel {
      */
     @Override
     public String toString() {
-        String s = "Classe = " + classe + " Numero de Portas = " + numeroPortas;
+        String s = "ID = " + id + "\nClasse = " + classe + "\nNumero de Portas = " + numeroPortas;
         return s;
     }
 

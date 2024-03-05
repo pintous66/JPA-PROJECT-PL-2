@@ -35,6 +35,9 @@ public class MainMenu {
 				case 2:
 					ui.listarGAs();
 					break;
+				case 3:
+					ui.procurarGAPorID();
+					break;
 
 				
 				
@@ -53,7 +56,8 @@ public class MainMenu {
 		System.out.println(" Rent a Car ");
 		System.out.println("=============================\n");
 		System.out.println("1.Registar Grupo Automóvel");
-		System.out.println("2.Listar todos os Grupos Automóveis");          
+		System.out.println("2.Listar todos os Grupos Automóveis");
+		System.out.println("3.Procurar Grupo Automóvel por ID");
 		
         System.out.println("=============================");
         System.out.println("0. Sair\n\n");

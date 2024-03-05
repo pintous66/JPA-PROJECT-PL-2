@@ -32,7 +32,9 @@ public class GrupoAutomovelController {
 	}
 
 	public GrupoAutomovel procurarGrupoAutomovel(long id) {
-		throw new UnsupportedOperationException("Ainda não implementada");
+
+        GrupoAutomovelRepositorio repositorio = new GrupoAutomovelRepositorioJPAImpl();
+        return repositorio.findById(id);
 	}
 
         /*  Versão  sem usar padrão repositório

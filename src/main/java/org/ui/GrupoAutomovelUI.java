@@ -42,7 +42,11 @@ public class GrupoAutomovelUI {
 
 	}
 
-	public void procurarGAPorID(long id) {
-		throw new UnsupportedOperationException("Ainda não implementada.");
+	public void procurarGAPorID() {
+        long id = Console.readLong("ID do Grupo Automóvel:");
+        GrupoAutomovel grupoAutomovel = controller.procurarGrupoAutomovel(id);
+        System.out.println("Grupo Automóvel: "+"\n" + ((grupoAutomovel == null)? "Não encontrado": grupoAutomovel));
+
+
 	}
 }

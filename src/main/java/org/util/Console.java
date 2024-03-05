@@ -148,4 +148,18 @@ public class Console {
     private Console() {
         // to make sure thi is an utility class
     }
+
+    public static long readLong(String prompt) {
+
+        System.out.print(prompt);
+        InputStreamReader converter = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(converter);
+        try {
+            return Long.parseLong(in.readLine());
+        } catch (IOException ex) {
+            Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+
+    }
 }
